@@ -1,3 +1,9 @@
+## Project 4 - Doc finder
+
+<p> This project is about developing a tool to help patients find doctors of a given specialty in their area. It aims to uses several features of the Laravel fraemwork as well as working with MySQL databases with mutliple tables. Front end techologies will be HTML/CSS/JavaScript</p>
+
+
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
