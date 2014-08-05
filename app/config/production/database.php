@@ -6,7 +6,7 @@ return array(
 
         'mysql' => array(
             'driver'    => 'mysql',
-            'host'      => 'hostname-goes-here',
+            'host'      => 'tunnel.pagodabox.com:3306',
             'database'  => 'docFinder',
             'username'  => 'margarette',
             'password'  => 'iSrRpZVn',
