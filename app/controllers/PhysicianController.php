@@ -31,16 +31,16 @@ class PhysicianController extends BaseController {
     
     public function getIndexBySpeciality()
 	{
-        $query  = Input::get('query');
+        $index  = Input::get('query1');
 
-		$docs = Physician::searchBySpeciality($query);
+		$docs = Physician::searchBySpeciality($index);
         $specialities = Physician::getSpecialities();
 		# Decide on output method...
 		# Default - HTML
 		
 			return View::make('physician_index')
 				->with('physicians', $docs)
-                ->with('query', $specialities[$query]);
+                ->with('query', $specialities[$index]);
 	}
     
     public function postSearch()

@@ -2,12 +2,13 @@
 	<h2>{{ $physician['name'] }}</h2>
 
 	<p>			
-	{{ $physician['speciality'] }} 
+	{{ "Speciality:".$physician['speciality'] }} 
 	</p>
 
 	<p>
+        {{ "Hospitals visited:" }}
 		@foreach($['hospitals'] as $hospital) 
-			{{ $hospital->name }}
+			{{ $hospital->name.<br> }}
 		@endforeach
 	</p>
 	<br>

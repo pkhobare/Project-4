@@ -16,16 +16,16 @@
    <!-- Populate all specialities from the physician db into a drop down list -->
     
    {{ Form::open(array('action' => 'PhysicianController@getIndex', 'method' => 'GET')) }}
-		{{ Form::label('query','Search by name:') }} &nbsp;
+		{{ Form::label('query','Search by hospital name/speciality:') }} &nbsp;
         {{ Form::text('query') }} &nbsp;
 		{{ Form::submit('Search!') }}
 
 	{{ Form::close() }}
 
 {{ Form::open(array('action' => 'PhysicianController@getIndexBySpeciality', 'method' => 'GET')) }}
-		{{ Form::label('query','Search by speciality:') }} &nbsp;
-        {{ Form::select('query', $speciality) }}
-		{{ Form::submit('Search!') }}
+		{{ Form::label('query1','Search by speciality:') }} &nbsp;
+        {{ Form::select('query1', $speciality) }}
+		{{ Form::submit('Search by speciality!') }}
 
 	{{ Form::close() }}
 

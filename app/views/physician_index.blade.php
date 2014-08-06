@@ -30,10 +30,12 @@
 			<p>			
 			     {{ $doc['speciality']}} 
 			</p>
-			<p>
+			<p>Hospitals</p>
+            <p>
 				@foreach($doc['hospitals'] as $hospital) 
-					{{ $hospital->name }}
+                     {{ $hospital->name }}
 				@endforeach
+                <br><br>
 			</p>
 			<br>
 			<a href='/doc/edit/{{ $doc->id }}'>Edit</a>

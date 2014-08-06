@@ -135,7 +135,7 @@ Route::get('/', function() {
     return View::make('search')->with('speciality', $specialities);
 });
            
-Route::get('/physician', 'PhysicianController@getIndex');
+Route::get('/physician1', 'PhysicianController@getIndex');
 Route::get('/physician', 'PhysicianController@getIndexBySpeciality');
 
 Route::get('/signup',
@@ -257,3 +257,4 @@ Route::get('/debug', function() {
     echo '</pre>';
 
 });
+

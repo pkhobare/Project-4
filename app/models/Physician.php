@@ -37,16 +37,16 @@ class Physician extends Eloquent {
 		return $physicians;	
 	}
     
-    public static function searchBySpeciality($query) {
+    public static function searchBySpeciality($index) {
 
         # If there is a query, search the library with that query
-		if($query) {
+		if($index) {
 
             # Identify speciality
             $specialities = Physician::getSpecialities();
             
             # Eager load tags and author
-	 		$physicians = Physician::with('hospitals')->where('speciality', 'LIKE', "$specialities[$query]")->get();
+	 		$physicians = Physician::with('hospitals')->where('speciality', 'LIKE', "$specialities[$index]")->get();
 		}
 
 		return $physicians;	
