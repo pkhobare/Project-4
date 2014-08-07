@@ -55,6 +55,30 @@ Route::get('/seed-physician', function(){
     # This is where the Eloquent ORM magic happens
     $hospital3->save();
     
+    $hospital4 = new Hospital();
+    # Set 
+    $hospital4->name = 'Boston Medical Center';
+    $hospital4->address = '840 Harrison Ave Boston, MA 02118';
+    
+    # This is where the Eloquent ORM magic happens
+    $hospital4->save();
+    
+    $hospital5 = new Hospital();
+    # Set 
+    $hospital5->name = 'Tufts Medical Center';
+    $hospital5->address = '800 Washington St, Boston, MA 02111';
+    
+    # This is where the Eloquent ORM magic happens
+    $hospital5->save();
+    
+    $hospital6 = new Hospital();
+    # Set 
+    $hospital6->name = 'Dana-Farber Cancer Institute';
+    $hospital6->address = '450 Brookline Ave, Boston, MA 02215';
+    
+    # This is where the Eloquent ORM magic happens
+    $hospital6->save();
+    
     # Instantiate a new Book model class
     $doc1 = new Physician();
 
@@ -95,7 +119,52 @@ Route::get('/seed-physician', function(){
     # This is where the Eloquent ORM magic happens
     $doc4->save();
     
-    $doc4->hospitals()->attach($hospital3);
+    $doc4->hospitals()->attach($hospital6);
+    $doc4->hospitals()->attach($hospital5);
+
+    $doc5 = new Physician();
+    # Set 
+    $doc5->name = 'Saal, A. Kim, MD';
+    $doc5->speciality = 'Behavioral Health';
+    # This is where the Eloquent ORM magic happens
+    $doc5->save();
+    
+    $doc5->hospitals()->attach($hospital4);
+    $doc5->hospitals()->attach($hospital6);
+
+    
+    $doc6 = new Physician();
+    # Set 
+    $doc6->name = 'Pond, Kyle K., MD';
+    $doc6->speciality = 'Clinical Neurophysiology';
+    # This is where the Eloquent ORM magic happens
+    $doc6->save();
+    
+    $doc6->hospitals()->attach($hospital2);
+    $doc6->hospitals()->attach($hospital5);
+
+    
+    $doc7 = new Physician();
+    # Set 
+    $doc7->name = 'Leavitt, Jeffrey I., MD';
+    $doc7->speciality = 'Endocrinology';
+    # This is where the Eloquent ORM magic happens
+    $doc7->save();
+    
+    $doc7->hospitals()->attach($hospital3);
+    $doc7->hospitals()->attach($hospital6);
+
+    
+    $doc8 = new Physician();
+    # Set 
+    $doc8->name = 'Kjelsberg, Michael A., MD';
+    $doc8->speciality = 'Audiology';
+    # This is where the Eloquent ORM magic happens
+    $doc8->save();
+    
+    $doc8->hospitals()->attach($hospital1);
+    $doc8->hospitals()->attach($hospital5);
+
     
 
     return 'Database seeded! Check your database to see...';

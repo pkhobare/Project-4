@@ -13,7 +13,7 @@
  <br>
   a. Search by hospital or speciality name (text search).
   b. Dropdown to search by speciality.
- 
+ 3. Click on logo at top of page to go back to search a different query.
  Currently, the database is pre-loaded with physicians that the user can search.
  <br>
  </p>
