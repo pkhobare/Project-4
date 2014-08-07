@@ -12,13 +12,7 @@
 <br><br>
 <h2>Find a doctor with speciality:</h2>
 <br><br>
-	<label for='query'>Search:</label>
-	<input type='text' id='query' name='query' value='Internal Medicine'><br><br>
-
-	<button id='practice'>Search</button><br><br>
-
-	<div id='results'></div>           
-
+<p> Sign up to create a user account. Log in if already signed up and you will be taken to the page to start searching for physicians.</p>
 @stop           
 
 @section('footer')

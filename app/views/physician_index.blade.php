@@ -11,7 +11,7 @@
 
 @section('content')
 
-	<h2>Physicians</h2>
+	<h1>Physicians</h1>
 
 	@if(trim($query) != "")
 		<p>You searched for &nbsp;<strong>{{{ $query }}}</strong></p>
@@ -25,20 +25,18 @@
 	@foreach($physicians as $doc)
 
 		<section>
-            <h3>{{ $doc['name'] }}</h3>
-
-			<p>			
-			     {{ $doc['speciality']}} 
-			</p>
-			<p>Hospitals</p>
+            <h2>{{ $doc['name'] }}</h2><br>
+            <p> Speciality:&nbsp;{{ $doc['speciality']}}</p>    
+            
+			<h3>Hospitals</h3>
             <p>
 				@foreach($doc['hospitals'] as $hospital) 
-                     {{ $hospital->name }}
+                     {{ $hospital->name }}<br><br>
 				@endforeach
-                <br><br>
+                <br>
 			</p>
 			<br>
-			<a href='/doc/edit/{{ $doc->id }}'>Edit</a>
+<!--			<a href='/doc/edit/{{ $doc->id }}'>Edit</a>-->
 		</section>
 
 	@endforeach

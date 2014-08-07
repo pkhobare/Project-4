@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-
 Route::get('/seed-physician', function(){
     
 
@@ -130,7 +125,15 @@ Route::get('/practice-reading', function() {
 
 });
 
-Route::get('/', function() {
+Route::get('/', 
+     array(
+        'before' => 'guest', function(){
+        return View::make('index');
+        }
+     )
+);
+
+Route::get('/search', function() {
     $specialities = Physician::getSpecialities();
     return View::make('search')->with('speciality', $specialities);
 });
@@ -169,7 +172,7 @@ Route::post('/signup',
             # Log the user in
             Auth::login($user);
 
-            return Redirect::to('/list')->with('flash_message', 'Welcome to DocFinder!');
+            return Redirect::to('/search')->with('flash_message', 'Welcome to DocFinder!');
 
         }
     )
@@ -192,7 +195,7 @@ Route::post('/login',
             $credentials = Input::only('email', 'password');
 
             if (Auth::attempt($credentials, $remember = true)) {
-                return Redirect::intended('/')->with('flash_message', 'Welcome Back!');
+                return Redirect::intended('/search')->with('flash_message', 'Welcome Back!');
             }
             else {
                 return Redirect::to('/login')->with('flash_message', 'Log in failed; please try again.');

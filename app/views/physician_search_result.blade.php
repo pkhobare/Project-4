@@ -12,5 +12,5 @@
 		@endforeach
 	</p>
 	<br>
-	<a href='/physician/edit/{{ $physician->id }}'>Edit</a>
+<!--	<a href='/physician/edit/{{ $physician->id }}'>Edit</a>-->
 </section>
